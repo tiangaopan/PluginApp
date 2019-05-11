@@ -8,7 +8,7 @@ import android.widget.Toast;
 import com.example.pluginlib.PluginActivity;
 
 public class MainActivity extends PluginActivity {
-
+    private static final String TAG = "MainActivity";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +24,6 @@ public class MainActivity extends PluginActivity {
     @Override
     public void onResume() {
         super.onResume();
-        Log.e("1111111111","111111111111111111111111");
+        Log.e(TAG,"111111111111111111111111");
     }
 }
