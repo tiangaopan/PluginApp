@@ -1,6 +1,7 @@
 package com.example.pluginlib;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -45,6 +46,64 @@ public class ProxyActivity extends Activity {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(mIplugin != null){
+            mIplugin.onResume();
+        }
+    }
+
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(mIplugin != null){
+            mIplugin.onStart();
+        }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if(mIplugin != null){
+            mIplugin.onRestart();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(mIplugin != null){
+            mIplugin.onPause();
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(mIplugin != null){
+            mIplugin.onStop();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mIplugin != null){
+            mIplugin.onDestroy();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(mIplugin != null){
+            mIplugin.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
     @Override

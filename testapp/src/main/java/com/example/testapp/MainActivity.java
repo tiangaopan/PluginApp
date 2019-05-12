@@ -8,12 +8,13 @@ import android.widget.Toast;
 import com.example.pluginlib.PluginActivity;
 
 public class MainActivity extends PluginActivity {
+
     private static final String TAG = "MainActivity";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.test_tv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "test app", Toast.LENGTH_LONG).show();

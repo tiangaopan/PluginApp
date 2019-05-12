@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String apkPath = Util.copyData(MainActivity.this, "testapp-release-unsigned.apk");
+                String apkPath = Util.copyData(MainActivity.this, "testapp.apk");
                 PluginManager.getInstance().loadApk(apkPath);
             }
         });
