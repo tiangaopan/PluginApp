@@ -3,6 +3,7 @@ package com.example.pluginlib;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 /**
  * Description:
@@ -13,7 +14,7 @@ import android.os.Bundle;
  */
 public class PluginActivity extends Activity implements IPlugin {
 
-    private Activity mProxyActivity;
+    public Activity mProxyActivity;
     //FROM_INTERNAL 说明已经加载进来，已经是个可执行文件 .
     private int mFrom = FROM_INTERNAL;
 
@@ -28,6 +29,15 @@ public class PluginActivity extends Activity implements IPlugin {
             super.setContentView(layoutResID);
         } else {
             mProxyActivity.setContentView(layoutResID);
+        }
+    }
+
+    @Override
+    public <T extends View> T findViewById(int id) {
+        if (mFrom == FROM_INTERNAL) {
+            return super.findViewById(id);
+        } else {
+            return mProxyActivity.findViewById(id);
         }
     }
 

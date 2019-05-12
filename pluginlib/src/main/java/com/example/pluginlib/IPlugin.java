@@ -3,6 +3,7 @@ package com.example.pluginlib;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 /**
  * Description:
@@ -40,4 +41,6 @@ public interface IPlugin {
     void onStop();
 
     void onDestroy();
+
+    <T extends View> T findViewById(int id);
 }

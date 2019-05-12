@@ -17,7 +17,9 @@ public class MainActivity extends PluginActivity {
         findViewById(R.id.test_tv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "test app", Toast.LENGTH_LONG).show();
+                Toast.makeText(mProxyActivity, "test app", Toast.LENGTH_LONG).show();
+//                Intent intent = new Intent(mProxyActivity, TestActivity.class);
+//                mProxyActivity.startActivity(intent);
             }
         });
     }
